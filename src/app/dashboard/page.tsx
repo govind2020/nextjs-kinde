@@ -1,17 +1,24 @@
-export default function Dashboard() {
+import DownloadButton from "../component/DownloadButton";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+
+export default async function Dashboard() {
+  const imageUrl =
+    "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg";
+
+  const { getPermission } = getKindeServerSession();
+  const requirePermssion = await getPermission("read:image");
+
   return (
     <div className="container">
       <div className="card start-hero">
-        <p className="text-body-2 start-hero-intro">Woohoo!</p>
-        <p className="text-display-2">
-          Your authentication is all sorted.
-          <br />
-          Build the important stuff.
-        </p>
+        <h1>Dashboard</h1>
       </div>
-      <section className="next-steps-section">
-        <h2 className="text-heading-1">Next steps for you</h2>
-      </section>
+
+      {requirePermssion?.isGranted ? (
+        <DownloadButton imageUrl={imageUrl} />
+      ) : (
+        <h3 className="text-permmsion">You dont have permmssion to download</h3>
+      )}
     </div>
   );
 }

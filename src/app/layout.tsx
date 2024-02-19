@@ -8,8 +8,8 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Kinde Auth",
-  description: "Kinde with NextJS App Router",
+  title: "Setoo Auth",
+  description: "Setoo with NextJS App Router",
 };
 
 export default async function RootLayout({
@@ -61,21 +61,6 @@ export default async function RootLayout({
           </nav>
         </header>
         <main>{children}</main>
-        <footer className="footer">
-          <div className="container">
-            <strong className="text-heading-2">KindeAuth</strong>
-            <p className="footer-tagline text-body-3">
-              Visit our{" "}
-              <Link className="link" href="https://kinde.com/docs">
-                help center
-              </Link>
-            </p>
-
-            <small className="text-subtle">
-              © 2023 KindeAuth, Inc. All rights reserved
-            </small>
-          </div>
-        </footer>
       </body>
     </html>
   );

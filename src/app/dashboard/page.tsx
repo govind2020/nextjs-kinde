@@ -1,5 +1,4 @@
 import DownloadButton from "../component/DownloadButton";
-import ContactForm from "../component/Form";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export default async function Dashboard() {

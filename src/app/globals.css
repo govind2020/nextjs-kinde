@@ -242,3 +242,13 @@ a {
   color: red;
   font-size: 20px;
 }
+
+.form-fields{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+.form-fields label {
+  margin-bottom: 2rem;
+}

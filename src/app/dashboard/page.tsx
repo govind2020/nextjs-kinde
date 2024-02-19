@@ -1,4 +1,5 @@
 import DownloadButton from "../component/DownloadButton";
+import ContactForm from "../component/Form";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export default async function Dashboard() {
@@ -17,8 +18,14 @@ export default async function Dashboard() {
       {requirePermssion?.isGranted ? (
         <DownloadButton imageUrl={imageUrl} />
       ) : (
-        <h3 className="text-permmsion">You dont have permmssion to download</h3>
+        <h3 className="text-permmsion">
+          You dont have permmssion to download anything!
+        </h3>
       )}
+
+      {/* <div className="form-fields">
+        <ContactForm />
+      </div> */}
     </div>
   );
 }
